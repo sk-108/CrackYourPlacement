@@ -1,3 +1,5 @@
+//Brute force 
+
 class Solution {
 public:
     void rec(vector<int>&arr,int i,int size)
@@ -28,5 +30,29 @@ public:
         int itr = 0;
         rec(nums,0,nums.size());
         return ;
+    }
+};
+
+
+
+
+
+//efficient approach
+
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int l = 0;
+        int r = 0;
+        while(r<nums.size())
+        {
+            if(nums[r] != 0)
+            {
+                swap(nums[r],nums[l]);
+                l++;
+            }
+            r++;
+        }
+        
     }
 };
